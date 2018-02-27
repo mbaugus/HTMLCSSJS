@@ -1,24 +1,27 @@
 <!doctype html>
 
 <html lang="en">
-    <head>
+    <head>  
         
         <title>Mike Baugus's resume</title>
-
+        <link rel="stylesheet" text="text/css" href="styles/CV.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
 
-    <body style="font-size: 1.00em; font-family:Arial, Helvetica, sans-serif">
+    <body>
+        <a href="index.html">Back to index</a>
+        
         <div id="introduction">
-            <div id="contact">
-                <h1 style="font-family: cursive; color:darkturquoise; font-size: 5.0em">Mike Baugus</h1>
-                <h3>513-940-8435 / mbaugus@gmail.com</h3>
-            </div>
-            <h2 style="color:tomato">Goal</h2>
-            <p style="font: italic bold 2.3em cursive, arial;">I am the best person for the job you are offering.  I promise!</p>
+            <span id ="myname">Mike Baugus</span> <span id="contact">513-940-8435 / mbaugus@gmail.com</span>
+        </div>
+
+        <div class="goals">
+                <h1>Goals</h1>
+                <p>I am the best person for the job you are offering.  Your goal should be to hire me!!</p>
         </div>
         
         <div id="skills">
-            <p style="font-weight: bold; font-style: italic; font-size: 2.0em; font-variant: small-caps; margin: 0 0; padding: 0 0;">
+            <p class="wacky">
             <span style="color:red">T</span>
             <span style="color:purple">e</span>
             <span style="color:blue">c</span>
@@ -36,6 +39,7 @@
             <span style="color:cyan">l</span>
             <span style="color:green">s</span>
             </p>
+
             <ul style="font-weight: 900;">
                 <li>C#</li>
                 <li>Git</li>
@@ -46,7 +50,7 @@
             </ul>
         </div>
         
-        <div id="achievements">
+        <div class="achievements">
             <h2>Achievements</h2>
             <ul>
                 <li>Learned how to ride a bicycle without training wheels at a young age</li>
@@ -54,7 +58,14 @@
             </ul>
         </div>
 
-        <div id="experience">
+        <div id="experience" 
+        style=
+        "border-style: solid;
+         border-width: 4px;
+         border-top-color:red;
+          border-bottom-color: indigo;
+          border-left-color: goldenrod;
+          border-right-color:lawngreen;">
         <h2>Work Experience</h2>
         <table>
             <thead>
