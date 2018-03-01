@@ -5,3 +5,28 @@
 body{
     background-color: rgba(240, 245, 243, 0.712);
 }
+
+.boldy{
+    font-weight: bold;
+}
+.redy{
+    color: red;
+}
+.italicy{
+    font-style: italic;
+}
+
+.cowlevel{
+    background-image: url("../images/cowburp.jpeg");
+    font-size: 3.5em;
+}
+
+.centered{
+    width: 60%;
+}
+
+.inputbox{
+    width: 300px;
+    font-size: 2.0em;
+    text-align: center;
+}

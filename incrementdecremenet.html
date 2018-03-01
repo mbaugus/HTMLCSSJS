@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Increment Decrement</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+    <div class="jumbotron">
+        <h1>Increment and Decrement</h1>
+    </div>
+
+    <div class="centered">
+        <button id="btn-left" class="button btn-lg">Minus</button>
+        <input id="num" class="inputbox" type="text" readonly value="0">
+        <button id="btn-right"  class="button btn-lg">Plus</button>
+    </div>
+    <!-- <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary btn-lg" type="button" id="btn-left">Minus</button>
+            </span>
+            <input type="text" id="start" align="middle" class="form-control jumbofont" placeholder="0" readyonly>
+            <span class="input-group-btn">
+              <button class="btn btn-secondary btn-lg" type="button"id="btn-right">Plus</button>
+            </span>
+          </div> -->
+
+    </div>
+</body>
+</html>
+
+<script>
+    $().ready(function(){
+        var num = $("#num");
+        var start = 0;
+        function Increment(){
+            start++;
+            SetValue(start);
+        }
+        function Decrement(){
+            start--;
+            SetValue(start);
+        }
+        function SetValue(){
+            num.removeClass("boldy redy italicy cowlevel");
+            if(start != 0){
+                if(start % 2 == 0) //red
+                    num.addClass("redy")
+                if(start % 3 == 0) // italic
+                    num.addClass("italicy")
+                if(start % 7 == 0) //bold
+                    num.addClass("boldy")
+                if(start % 5 == 0)
+                    num.addClass("cowlevel");
+            }
+        
+            num.val(start);
+        }
+
+        $("#btn-left").on('click', Decrement);
+        $("#btn-right").on('click', Increment);
+    });
+</script>
