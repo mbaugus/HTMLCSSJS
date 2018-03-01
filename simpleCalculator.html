@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Simple Calculator</h1>
+        </div>
+        <hr>
+    <input class="input" id="op1" type="text">
+    <input class="input" id="op2" type="text">
+    <label class="label" id="ans">Answer here</label>
+    <br>
+    <button class="button btn-lg" type="button" id="add">+</button>
+    <button class="button btn-lg" type="button" id="sub">-</button>
+    <button class="button btn-lg" type="button" id="mult">*</button>
+    <button class="button btn-lg" type="button" id="div">/</button>
+</div>
+</body>
+</html>
+
+
+<script>
+$().ready(function(){
+    function changeAnswer(answer)
+    {
+        document.getElementById("ans").textContent = answer;
+    }
+    
+    function getInput(){
+        var a =  Number(document.getElementById("op1").value);
+        var b = Number(document.getElementById("op2").value);
+        return {"a": a, "b": b};
+    }
+
+    function Add(){
+        var a = getInput();
+        changeAnswer(a.a + a.b);
+    }
+    function Subtract(){
+        var a = getInput();
+        changeAnswer(a.a - a.b);
+    }
+    function Multiply(){
+        var a = getInput();
+        changeAnswer(a.a * a.b);
+    }
+    function Divide(){
+        var a = getInput();
+        changeAnswer(a.a / a.b);
+    }
+
+    document.getElementById("add").addEventListener("click", Add);
+    document.getElementById("sub").addEventListener("click", Subtract);
+    document.getElementById("mult").addEventListener("click", Multiply);
+    document.getElementById("div").addEventListener("click", Divide);
+})
+</script>

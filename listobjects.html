@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>List 2.0</h1>
+        <p=""
+    </div>
+    <div>
+            <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                    </div>
+                    <input type="text" class="form-control" id="name" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                  </div>
+
+                  <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-default">Phone</span>
+                        </div>
+                        <input type="text" id="phone" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                      </div>
+
+        <button id="add" type="button" class="button btn-lg">Add</button>
+    </div>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody">
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+      
+    tbodyctrl = document.getElementById("tablebody");
+    var arrObjects = [];
+
+    function AddObject(name, phone)
+    {
+        var obj = {
+            name : name,
+            phone : phone
+        };
+        arrObjects.push(obj);
+    }
+    function DisplayObject(){
+        tbodyctrl.innerHTML = "";
+        var tablesInput = "";
+
+        arrObjects.forEach(p => {
+            tablesInput += "<tr><td>" + p.name + "</td><td>" + p.phone + "</td></tr>";
+        })
+
+        tbodyctrl.innerHTML += tablesInput;
+    };
+    function Clicked(){
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        AddObject(name, phone);
+        DisplayObject();
+    }
+
+    document.getElementById("add").addEventListener('click', Clicked);
+});
+</script>

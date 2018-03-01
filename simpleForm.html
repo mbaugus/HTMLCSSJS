@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Simple Form</h1>
+            <hr>
+            <p class="lead">It doesnt get much simpler.</p>
+        </div>
+        <hr>
+        <input type="text" name="inp" id="inp">
+        <button id="btn">Click me!</button>
+        <label id="lbl"></label>
+    </div>
+</body>
+</html>
+
+<script>
+    $().ready(function(){
+
+    Main();
+
+    function Main(){
+        var inputButton = document.getElementById("btn");
+        //inputButton.addEventListener("click", OnClick);
+        var b =  document.getElementsByTagName('body');
+        b.addEventListener("keypress", function(e){
+            console.log(e);
+        });
+
+    }
+    function OnClick(){
+        console.log("Clicked");
+        var inputCtrl = document.getElementById("inp");
+        var inputText = inputCtrl.value;
+        var labelCtrl = document.getElementById("lbl");
+        labelCtrl.textContent = inputText;
+    }
+    });
+</script>

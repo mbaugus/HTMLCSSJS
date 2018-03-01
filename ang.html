@@ -15,5 +15,24 @@
             <p>{{name}}</p>
         </div>
     </body>
-
 </html>
+
+<script>
+    var f;
+    console.log(typeof(f));
+    var f = function(){
+    }
+    console.log(typeof(f));
+    f = "hello";
+    console.log(typeof(f));
+    f = 5;
+    console.log(typeof(f));
+    f = true;
+    console.log(typeof(f));
+    f = null;
+    console.log(typeof(f));
+    f = [1,2,3];
+    console.log(typeof(f));
+    f = {"n": 1};
+    console.log(typeof(f));
+</script>
