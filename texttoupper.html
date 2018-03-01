@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Increment Decrement</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+
+    <div class="container">
+        <div class="jumbotron">
+        <h1 id="uppername">To Upper</h1>
+        <hr>
+        <p id="rock" style="display: none;">You rock!</p>
+        </div>
+        <label class="label">What's your name?</label>
+        <input type="text" id="yourname">
+        <button class="button" id="btnUpper">Click it</button>
+    </div>
+    <br>
+    <div class="container">
+        <div class="jumbotron">
+        <h1>Add em up!</h1>
+        <hr>
+        </div>
+        <label class="label" id="summednumbers">The sum</label>
+        <input type="text" id="spacednumbers">
+        <button class="button" id="addemup">Add em up!</button>
+    </div>
+
+    <br>
+    <div class="container">
+        <div class="jumbotron">
+        <h1>Crazy stuff</h1>
+        <hr>
+        </div>
+        <button class="button" id="btnSplit">Crazy stuff</button>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class = "jumbotron">
+                <h1 id="nameCombine">Combine your name</h1>
+        </div>
+        <label>First name</label> <input type="text" id="inputFirstName">
+        <label>Last name</label> <input type="text" id="inputLastName">
+        <button id="BtnCombineNames">Combine</button>
+        <label id="labelCombinedName"></label>
+    </div>
+    <br>
+    </div>
+</body>
+</html>
+
+<script>
+    
+    $().ready(function(){
+
+
+    function GetThoseElements(){
+
+        var bodyChilds = $('body').children();
+        $(".jumbotron").each( function(index, element){
+            var e = $(element);
+        e.animate({0 : 360}, {
+        duration: 2000,
+        step: function(now) {
+            // in the step-callback (that is fired each step of the animation),
+            // you can use the `now` paramter which contains the current
+            // animation-position (`0` up to `angle`)
+            e.css({
+                transform: 'rotateY(' + now + 'deg)',
+                "transform-origin": "50% 50%"
+            });
+        }
+        });
+        });
+    }
+
+      $("#btnUpper").on('click', function(){
+          var name = $("#yourname").val().toString().toUpperCase();
+          $("#uppername").text(name);
+          $('#rock').show();
+      });
+
+      $("#addemup").on('click', function(){
+          var output = 0;
+          $("#spacednumbers").val().split(' ').forEach(e => { output += Number(e); });
+          $("#summednumbers").text(output);
+      });
+
+      $("#btnSplit").on('click', GetThoseElements);
+
+      $("#BtnCombineNames").on('click', function(){
+        $("#nameCombine").text($("#inputFirstName").val() + " " + $("#inputLastName").val());
+      });
+});
+</script>

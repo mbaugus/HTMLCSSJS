@@ -35,17 +35,21 @@
 </html>
 
 <script>
+    
     $().ready(function(){
         var num = $("#num");
         var start = 0;
+
         function Increment(){
             start++;
             SetValue(start);
         }
+
         function Decrement(){
             start--;
             SetValue(start);
         }
+
         function SetValue(){
             num.removeClass("boldy redy italicy cowlevel");
             if(start != 0){
