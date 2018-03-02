@@ -60,8 +60,7 @@
 <script>
     
     $().ready(function(){
-
-
+    
     function GetThoseElements(){
 
         var bodyChilds = $('body').children();
@@ -82,20 +81,22 @@
         });
     }
 
+      // upper case click
       $("#btnUpper").on('click', function(){
           var name = $("#yourname").val().toString().toUpperCase();
           $("#uppername").text(name);
           $('#rock').show();
       });
-
+      // add it up click
       $("#addemup").on('click', function(){
           var output = 0;
           $("#spacednumbers").val().split(' ').forEach(e => { output += Number(e); });
           $("#summednumbers").text(output);
       });
-
+       // our crazy function, defined above
       $("#btnSplit").on('click', GetThoseElements);
 
+      // combine the name click
       $("#BtnCombineNames").on('click', function(){
         $("#nameCombine").text($("#inputFirstName").val() + " " + $("#inputLastName").val());
       });

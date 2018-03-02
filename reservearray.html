@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multiply the adds</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 id="result" class="display-3">Reverse the array, have fun!</h1>
+        </div>
+        <input id="inputCtrl">
+        <button id="btnAdd">Add</button>
+        <button id="btnReverse">Display Reversed</button>
+    </div>
+</body>
+</html>
+
+<script>
+    
+    $().ready(function(){
+        var arr = [];
+
+        $("#btnAdd").on('click', function(){
+            arr.push(Number($("#inputCtrl").val()));
+            $("#result").text(arr.join(", "));
+        });
+
+        $("#btnReverse").on('click', function(){
+            $("#result").text( arr.reverse().join(", ") );
+            arr = [];
+        });
+
+    });
+</script>
